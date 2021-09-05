@@ -1,0 +1,10 @@
+.App {
+  &--Header {
+    background-color: #ffd326;
+
+    &--Logo {
+      height: 50px;
+      padding: 10px;
+    }
+  }
+}
