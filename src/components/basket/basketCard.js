@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import { ProductsContext } from '../../context/products';
 import { Button, Card } from 'react-bootstrap';
 import { FaTrash } from "react-icons/fa";
@@ -31,14 +30,4 @@ export const BasketCard = ({ basketItem }) => {
             </Card.Body>
         </Card>
     )
-};
-
-const basketItemPropType = PropTypes.shape({
-    name: PropTypes.string,
-    price: PropTypes.number,
-    amount: PropTypes.number
-});
-
-BasketCard.propTypes = {
-    basketItem: basketItemPropType
 };

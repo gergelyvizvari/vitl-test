@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
 import { ProductsContext } from '../../context/products';
 import { Button, Card } from 'react-bootstrap';
 import { NutrientList } from './nutrientList';
@@ -33,14 +32,4 @@ export const ProductCard = ({ product }) => {
             </Card>
         </div>
     )
-};
-
-const productPropType = PropTypes.shape({
-    name: PropTypes.string,
-    price: PropTypes.number,
-    nutrients: PropTypes.array
-});
-
-ProductCard.propTypes = {
-    product: productPropType
 };

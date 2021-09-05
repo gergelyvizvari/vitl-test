@@ -1,5 +1,4 @@
 import React, { useState, createContext } from 'react';
-import PropTypes from 'prop-types';
 
 export const BasketContext = createContext();
 
@@ -28,13 +27,6 @@ export const BasketProvider = ({ children }) => {
         }
     }
 
-    const increaseItem = (basketItem) => {
-        const items = [...basketItems];
-        const itemInBasket = items.find(item => item.name == basketItem.name);
-        itemInBasket.amount += 1;
-        setBasketItems(items);
-    }
-
     const deleteItem = (basketItem) => {
         const items = [...basketItems];
         let itemIndex = items.findIndex(item => item.name == basketItem.name);
@@ -60,7 +52,6 @@ export const BasketProvider = ({ children }) => {
     return <BasketContext.Provider value={{
         basketItems,
         addItem,
-        increaseItem,
         decreaseItem,
         deleteItem,
         getTotalPriceAndItems
@@ -68,7 +59,3 @@ export const BasketProvider = ({ children }) => {
         {children}
     </BasketContext.Provider>
 }
-
-BasketProvider.propTypes = {
-    children: PropTypes.element.isRequired
-};

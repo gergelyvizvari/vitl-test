@@ -1,6 +1,4 @@
 import React, { useState, createContext, useEffect } from 'react';
-import PropTypes from 'prop-types';
-
 export const ProductsContext = createContext();
 
 export const ProductsProvider = ({ children }) => {
@@ -34,7 +32,3 @@ export const ProductsProvider = ({ children }) => {
         {children}
     </ProductsContext.Provider>
 }
-
-ProductsProvider.propTypes = {
-    children: PropTypes.element.isRequired
-};
