@@ -7,6 +7,7 @@
 
 ## Install project from github
 
+0. clone this repo
 1. run yarn in the roout folder
 2. run yarn start
 
