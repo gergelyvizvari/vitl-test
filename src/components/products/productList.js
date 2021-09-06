@@ -12,7 +12,12 @@ const ProductItems = ({ products }) => {
 };
 
 export const ProductList = () => {
-    const { products } = useContext(ProductsContext);
+    const { products, loaded } = useContext(ProductsContext);
+
+    if (!loaded) {
+        return 'Please wait...';
+    }
+
     return <section>
         <h2>Products</h2>
         <Row>

@@ -1,16 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { ProductsContext } from '../../context/products';
 import { Button, Card } from 'react-bootstrap';
 import { NutrientList } from './nutrientList';
 import { TiShoppingCart } from "react-icons/ti";
+import { BasketContext } from '../../context/basket';
+import { useCurrency } from '../../hook/currency';
 
 import './productCard.scss';
-import { BasketContext } from '../../context/basket';
 
 export const ProductCard = ({ product }) => {
-    const { config } = useContext(ProductsContext);
     const { addItem } = useContext(BasketContext);
     const [showDetails, setShowDetails] = useState(false);
+    const currency = useCurrency();
 
     return (
         <div className={'ProductCard'}>
@@ -25,8 +25,8 @@ export const ProductCard = ({ product }) => {
                     <Card.Title>{product.name}</Card.Title>
                     <hr />
                     <div className={'d-flex justify-content-between align-items-center'}>
-                        {config.currency}{product.price}
-                        <Button onClick={() => addItem(product)}><TiShoppingCart /></Button>
+                        {currency(product.price)}
+                        <Button onClick={() => addItem(product)}><TiShoppingCart size={18} /></Button>
                     </div>
                 </Card.Body>
             </Card>
